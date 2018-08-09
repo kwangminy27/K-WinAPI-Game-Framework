@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "core.h"
+#include "timer.h"
 
 using namespace std;
 
@@ -11,6 +12,9 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 	_CreateWindow(_class_name, _window_name);
 
 	device_context_ = GetDC(window_);
+
+	if (!_CreateTimer())
+		return false;
 
 	return true;
 }
@@ -56,7 +60,6 @@ void Core::set_state(MESSAGE_LOOP _state)
 {
 	state_ = _state;
 }
-
 
 void Core::_Release()
 {
@@ -115,8 +118,25 @@ void Core::_CreateWindow(wstring const& _class_name, wstring const& _window_name
 	ShowWindow(window_, SW_SHOW);
 }
 
+bool Core::_CreateTimer()
+{
+	timer_ = unique_ptr<Timer, function<void(Timer*)>>(new Timer, [](Timer* p) {
+		delete p;
+	});
+	time_scale_ = 1.f;
+
+	return true;
+}
+
 void Core::_Logic()
 {
+	timer_->Update();
+	float delta_time = timer_->delta_time() * time_scale_;
+
+	_Input(delta_time);
+	_Update(delta_time);
+	_Collision(delta_time);
+	_Render(delta_time);
 }
 
 void Core::_Input(float _time)
@@ -133,4 +153,7 @@ void Core::_Collision(float _time)
 
 void Core::_Render(float _time)
 {
+	wstring fps = to_wstring(timer_->frame_per_second());
+	fps += L" FPS";
+	TextOut(device_context_, 0, 0, fps.c_str(), static_cast<int>(fps.size()));
 }

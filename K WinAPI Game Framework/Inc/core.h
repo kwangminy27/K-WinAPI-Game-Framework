@@ -2,6 +2,8 @@
 
 #include "singleton.h"
 
+class Timer;
+
 class Core final : public Singleton<Core>
 {
 	friend class Singleton<Core>;
@@ -27,6 +29,8 @@ private:
 	void _RegisterClass(std::wstring const& _class_name, HICON _icon);
 	void _CreateWindow(std::wstring const& _class_name, std::wstring const& _window_name);
 
+	bool _CreateTimer();
+
 	void _Logic();
 	void _Input(float _time);
 	void _Update(float _time);
@@ -38,4 +42,7 @@ private:
 	HDC device_context_{};
 
 	MESSAGE_LOOP state_{ MESSAGE_LOOP::RUN };
+
+	std::unique_ptr<Timer, std::function<void(Timer*)>> timer_{};
+	float time_scale_{};
 };

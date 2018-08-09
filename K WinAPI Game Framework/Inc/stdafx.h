@@ -13,3 +13,6 @@
 // K WinAPI Game Framework
 #include "enum.h"
 #include "type.h"
+
+// DirectXTK
+#include <Audio.h>

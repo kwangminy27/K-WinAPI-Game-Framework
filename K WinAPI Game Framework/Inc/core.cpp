@@ -4,6 +4,7 @@
 #include "timer.h"
 #include "path_manager.h"
 #include "texture_manager.h"
+#include "audio_manager.h"
 
 using namespace std;
 
@@ -20,6 +21,9 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 		return false;
 
 	if (!TextureManager::GetSingleton()->Initialize())
+		return false;
+
+	if (!AudioManager::GetSingleton()->Initialize())
 		return false;
 
 	if (!_CreateTimer())
@@ -154,6 +158,7 @@ void Core::_Input(float _time)
 
 void Core::_Update(float _time)
 {
+	AudioManager::GetSingleton()->Update();
 }
 
 void Core::_Collision(float _time)

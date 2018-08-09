@@ -108,6 +108,9 @@
     <ClCompile Include="texture_manager.cpp">
       <Filter>08. Texture</Filter>
     </ClCompile>
+    <ClCompile Include="audio_manager.cpp">
+      <Filter>10. Audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -148,6 +151,9 @@
     </ClInclude>
     <ClInclude Include="texture.h">
       <Filter>08. Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_manager.h">
+      <Filter>10. Audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

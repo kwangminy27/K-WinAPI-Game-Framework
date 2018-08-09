@@ -96,6 +96,9 @@
     <ClCompile Include="physics.cpp">
       <Filter>01. Core\03. Physics</Filter>
     </ClCompile>
+    <ClCompile Include="path_manager.cpp">
+      <Filter>07. Path</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -124,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="physics.h">
       <Filter>01. Core\03. Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="path_manager.h">
+      <Filter>07. Path</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

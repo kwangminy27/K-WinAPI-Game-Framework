@@ -155,6 +155,7 @@
     <ClCompile Include="core.cpp" />
     <ClCompile Include="K WinAPI Game Framework.cpp" />
     <ClCompile Include="math.cpp" />
+    <ClCompile Include="path_manager.cpp" />
     <ClCompile Include="physics.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -167,6 +168,7 @@
     <ClInclude Include="core.h" />
     <ClInclude Include="enum.h" />
     <ClInclude Include="math.h" />
+    <ClInclude Include="path_manager.h" />
     <ClInclude Include="physics.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="singleton.h" />

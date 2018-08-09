@@ -4,6 +4,7 @@
 #include <Windows.h>
 
 // C++ Standard Library
+#include <filesystem>
 #include <functional>
 #include <memory>
 #include <mutex>

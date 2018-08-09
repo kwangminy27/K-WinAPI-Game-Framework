@@ -93,6 +93,9 @@
     <ClCompile Include="type.cpp">
       <Filter>K WinAPI Game Framework\Base</Filter>
     </ClCompile>
+    <ClCompile Include="physics.cpp">
+      <Filter>01. Core\03. Physics</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -118,6 +121,9 @@
     </ClInclude>
     <ClInclude Include="type.h">
       <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="physics.h">
+      <Filter>01. Core\03. Physics</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

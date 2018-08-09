@@ -11,3 +11,4 @@
 
 // K WinAPI Game Framework
 #include "enum.h"
+#include "type.h"

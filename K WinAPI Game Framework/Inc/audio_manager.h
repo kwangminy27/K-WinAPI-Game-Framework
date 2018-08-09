@@ -22,6 +22,7 @@ private:
 
 	virtual void _Release() override;
 
+	bool _LoadAnimationDataSheet(std::wstring const& _file_name, std::string const& _path_tag = "DataPath");
 	bool _LoadSoundEffect(std::string const& _tag, std::wstring const& _file_name, std::string const& _path_tag = "SoundPath");
 
 	std::unique_ptr<DirectX::AudioEngine> audio_engine_{};

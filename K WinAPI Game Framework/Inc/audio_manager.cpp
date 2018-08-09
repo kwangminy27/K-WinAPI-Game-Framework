@@ -17,7 +17,8 @@ bool AudioManager::Initialize()
 #endif
 	audio_engine_ = std::make_unique<AudioEngine>(audio_engine_flags);
 
-	_LoadSoundEffect("town1", L"town1.wav");
+	if (!_LoadAnimationDataSheet(L"sound.csv"))
+		return false;
 
 	return true;
 }
@@ -54,6 +55,47 @@ void AudioManager::AddSoundEffectInstance(unique_ptr<SoundEffectInstance> _sound
 
 void AudioManager::_Release()
 {
+}
+
+bool AudioManager::_LoadAnimationDataSheet(wstring const& _file_name, string const& _path_tag)
+{
+	path path_buffer = PathManager::GetSingleton()->FindPath(_path_tag);
+
+	if (path_buffer.empty())
+		return false;
+
+	wstring full_path = path_buffer.wstring() + _file_name;
+
+	ifstream file{ full_path };
+
+	if (file.bad())
+		return false;
+
+	while (true)
+	{
+		string line{};
+		stringstream line_stream{};
+
+		getline(file, line);
+
+		if (line.empty())
+			break;
+
+		line_stream.str(line);
+
+		string tag{};
+		string sound_file_name{};
+
+		getline(line_stream, tag, ',');
+		getline(line_stream, sound_file_name, ',');
+
+		wstring wstring_sound_file_name{ sound_file_name.begin(), sound_file_name.end() };
+
+		if (!_LoadSoundEffect(tag, wstring_sound_file_name))
+			return false;
+	}
+
+	return true;
 }
 
 bool AudioManager::_LoadSoundEffect(string const& _tag, wstring const& _file_name, string const& _path_tag)

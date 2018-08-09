@@ -18,6 +18,7 @@ private:
 
 	virtual void _Release() override;
 
+	bool _LoadTextureDataSheet(std::wstring const& _file_name, std::string const& _path_tag = "DataPath");
 	bool _LoadTexture(std::string const& _tag, std::wstring const& _file_name, std::string const& _path_tag = "TexturePath");
 
 	std::shared_ptr<Texture> texture_nullptr_{};

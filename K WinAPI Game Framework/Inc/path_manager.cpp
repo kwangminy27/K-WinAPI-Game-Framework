@@ -12,9 +12,10 @@ bool PathManager::Initialize()
 	path_map_.insert(make_pair("RootPath", move(path_buffer)));
 
 	_AddPath("DataPath", "Data\\");
+	_AddPath("AnimationPath", "Animation\\", "DataPath");
 	_AddPath("SoundPath", "Sound\\");
 	_AddPath("TexturePath", "Texture\\");
-	_AddPath("AnimationPath", "Animation\\", "TexturePath");
+	
 
 	return true;
 }

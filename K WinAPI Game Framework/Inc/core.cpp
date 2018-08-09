@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "core.h"
+
 #include "timer.h"
+#include "path_manager.h"
+#include "texture_manager.h"
 
 using namespace std;
 
@@ -12,6 +15,12 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 	_CreateWindow(_class_name, _window_name);
 
 	device_context_ = GetDC(window_);
+
+	if (!PathManager::GetSingleton()->Initialize())
+		return false;
+
+	if (!TextureManager::GetSingleton()->Initialize())
+		return false;
 
 	if (!_CreateTimer())
 		return false;

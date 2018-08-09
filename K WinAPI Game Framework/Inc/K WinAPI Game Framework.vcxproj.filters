@@ -99,6 +99,15 @@
     <ClCompile Include="path_manager.cpp">
       <Filter>07. Path</Filter>
     </ClCompile>
+    <ClCompile Include="tag.cpp">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClCompile>
+    <ClCompile Include="texture.cpp">
+      <Filter>08. Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_manager.cpp">
+      <Filter>08. Texture</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -130,6 +139,15 @@
     </ClInclude>
     <ClInclude Include="path_manager.h">
       <Filter>07. Path</Filter>
+    </ClInclude>
+    <ClInclude Include="tag.h">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_manager.h">
+      <Filter>08. Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="texture.h">
+      <Filter>08. Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

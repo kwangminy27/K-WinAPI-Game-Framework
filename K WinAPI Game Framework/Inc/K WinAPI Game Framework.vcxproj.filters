@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="K WinAPI Game Framework">
+      <UniqueIdentifier>{a6091c7d-24bb-48d0-8a5a-14a76f5f1319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Core">
+      <UniqueIdentifier>{2fe2884e-b40e-4e5e-bbf1-27aa4e1d9318}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="K WinAPI Game Framework\Base">
+      <UniqueIdentifier>{9f9dc07a-f6fa-461a-b0da-8c687a9c8256}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="K WinAPI Game Framework\Resource">
+      <UniqueIdentifier>{60f50e44-ab63-4977-81fa-c0b3d097ac95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Core\01. Timer">
+      <UniqueIdentifier>{f5b06d4f-3939-4137-b4f6-7ccdda7f62cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Core\02. Math">
+      <UniqueIdentifier>{f823cf4b-43eb-49c6-919f-9982d2977728}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="01. Core\03. Physics">
+      <UniqueIdentifier>{fcc3ec86-ee43-402a-9690-f5fe5c387c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="02. Input">
+      <UniqueIdentifier>{ad3ce1e0-af8b-4c7f-b8b7-f6244fafc606}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="03. Camera">
+      <UniqueIdentifier>{fc848502-5c28-426f-b8e5-66bbd01b65ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Scene">
+      <UniqueIdentifier>{9d8c194d-0404-4fa4-b61c-204bc013f633}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object">
+      <UniqueIdentifier>{d5b97ab7-9fc5-412f-9644-976379138294}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="06. Collision">
+      <UniqueIdentifier>{ecac5739-b827-4424-ba2e-49f7d706b78c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="07. Path">
+      <UniqueIdentifier>{52a1415b-46d5-4c47-84a0-7012481e4485}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="08. Texture">
+      <UniqueIdentifier>{6f317303-4912-41dd-94a2-3453cb9f6160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="09. Animation">
+      <UniqueIdentifier>{95c3f2e2-a84a-4c24-83e2-1932b3c9b265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="10. Audio">
+      <UniqueIdentifier>{78ae0ec9-12bc-45f3-89e5-084c69c9826b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Scene\01. SceneComponent">
+      <UniqueIdentifier>{5d5271d4-bf7b-4ad0-b134-0ed37a69d145}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="04. Scene\02. Layer">
+      <UniqueIdentifier>{5ce2a6d2-0425-4266-b96c-8e2fbffa08a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object\01. Stage">
+      <UniqueIdentifier>{6593b5e5-fa33-41e9-a3d5-40a871be0607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object\02. Character">
+      <UniqueIdentifier>{7b82e5f6-2b1d-4f3c-a106-b34b4fa1f3fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object\03. Missile">
+      <UniqueIdentifier>{04b6e719-9404-4d52-bfcf-ceb853ee8f41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object\04. Item">
+      <UniqueIdentifier>{00c03620-cacc-4e7e-9e1d-c295ab0fb30a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object\05. Effect">
+      <UniqueIdentifier>{fb33daa6-1b0f-4b91-8612-6257f7180ac7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="05. Object\06. UI">
+      <UniqueIdentifier>{385f15f6-b782-4e95-9fcf-f068322e5a23}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="K WinAPI Game Framework.cpp">
+      <Filter>K WinAPI Game Framework</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -7,6 +7,10 @@ using namespace std;
 
 bool TextureManager::Initialize()
 {
+	// Animation Texture Atlas
+	_LoadTexture("Left", L"Left.bmp", "AnimationPath");
+
+	// Normal Texture
 	_LoadTexture("Test", L"Test.bmp");
 
 	return true;

@@ -41,4 +41,16 @@ namespace TYPE
 		Point center{};
 		float radius{};
 	};
+
+	struct AnimationClipInfo
+	{
+		int frame_width{};
+		int frame_height{};
+		int start_x{};
+		int start_y{};
+		int end_x{};
+		int count_x{};
+		int count_y{};
+		int total_count{};
+	};
 };

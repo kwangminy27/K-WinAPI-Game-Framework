@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+using namespace std;
 using namespace TYPE;
 
 Point Point::operator+(float _value) const

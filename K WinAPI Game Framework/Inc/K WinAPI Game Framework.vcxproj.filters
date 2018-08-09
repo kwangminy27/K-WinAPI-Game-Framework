@@ -111,6 +111,12 @@
     <ClCompile Include="audio_manager.cpp">
       <Filter>10. Audio</Filter>
     </ClCompile>
+    <ClCompile Include="animation_clip.cpp">
+      <Filter>09. Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="animation_manager.cpp">
+      <Filter>09. Animation</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -154,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="audio_manager.h">
       <Filter>10. Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_manager.h">
+      <Filter>09. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="animation_clip.h">
+      <Filter>09. Animation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

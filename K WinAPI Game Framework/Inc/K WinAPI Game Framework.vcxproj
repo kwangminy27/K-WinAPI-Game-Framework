@@ -154,6 +154,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="animation_clip.cpp" />
+    <ClCompile Include="animation_manager.cpp" />
     <ClCompile Include="audio_manager.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="K WinAPI Game Framework.cpp" />
@@ -171,6 +173,8 @@
     <ClCompile Include="type.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="animation_clip.h" />
+    <ClInclude Include="animation_manager.h" />
     <ClInclude Include="audio_manager.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="enum.h" />

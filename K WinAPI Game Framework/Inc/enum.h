@@ -11,3 +11,16 @@ enum class MESSAGE_LOOP
 	RUN,
 	EXIT
 };
+
+enum class ANIMATION_CLIP_TYPE
+{
+	ATLAS,
+	FRAME
+};
+
+enum class ANIMATION_OPTION
+{
+	LOOP,
+	RETURN,
+	DESTROY
+};

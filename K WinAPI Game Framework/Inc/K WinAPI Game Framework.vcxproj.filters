@@ -81,10 +81,40 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>K WinAPI Game Framework\Base</Filter>
     </ClCompile>
+    <ClCompile Include="core.cpp">
+      <Filter>01. Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>K WinAPI Game Framework\Base</Filter>
     </ClInclude>
+    <ClInclude Include="core.h">
+      <Filter>01. Core</Filter>
+    </ClInclude>
+    <ClInclude Include="singleton.h">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>K WinAPI Game Framework\Resource</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="singleton.inl">
+      <Filter>K WinAPI Game Framework\Base</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="icon1.ico">
+      <Filter>K WinAPI Game Framework\Resource</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="K WinAPI Game Framework.rc">
+      <Filter>K WinAPI Game Framework\Resource</Filter>
+    </ResourceCompile>
   </ItemGroup>
 </Project>

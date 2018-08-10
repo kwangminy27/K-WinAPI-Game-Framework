@@ -39,7 +39,7 @@ void Object::set_layer(shared_ptr<Layer> const& _layer)
 
 shared_ptr<Texture> Object::texture() const
 {
-	return texture_.lock();
+	return texture_;
 }
 
 void Object::set_texture(string const& _tag)

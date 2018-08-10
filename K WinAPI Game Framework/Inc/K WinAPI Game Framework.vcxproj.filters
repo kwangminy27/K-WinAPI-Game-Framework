@@ -141,6 +141,9 @@
     <ClCompile Include="logo_scene.cpp">
       <Filter>04. Scene\01. SceneComponent</Filter>
     </ClCompile>
+    <ClCompile Include="input_manager.cpp">
+      <Filter>02. Input</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -215,6 +218,9 @@
     <ClInclude Include="logo_scene.h">
       <Filter>04. Scene\01. SceneComponent</Filter>
     </ClInclude>
+    <ClInclude Include="input_manager.h">
+      <Filter>02. Input</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="singleton.inl">
@@ -228,6 +234,9 @@
     </None>
     <None Include="object_manager.inl">
       <Filter>05. Object</Filter>
+    </None>
+    <None Include="input_manager.inl">
+      <Filter>02. Input</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

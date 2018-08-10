@@ -8,6 +8,7 @@
 #include "audio_manager.h"
 #include "scene_manager.h"
 #include "object_manager.h"
+#include "input_manager.h"
 
 using namespace std;
 
@@ -30,6 +31,9 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 		return false;
 
 	if (!AudioManager::GetSingleton()->Initialize())
+		return false;
+
+	if (!InputManager::GetSingleton()->Initialize())
 		return false;
 
 	if (!SceneManager::GetSingleton()->Initialize())
@@ -152,11 +156,12 @@ bool Core::_CreateTimer()
 
 void Core::_Logic()
 {
-	SceneManager::GetSingleton()->TrySceneChange();
-
 	timer_->Update();
 	float delta_time = timer_->delta_time() * time_scale_;
 
+	InputManager::GetSingleton()->Update();
+
+	SceneManager::GetSingleton()->TrySceneChange();
 	_Input(delta_time);
 	_Update(delta_time);
 	_Collision(delta_time);
@@ -167,6 +172,9 @@ void Core::_Logic()
 
 void Core::_Input(float _time)
 {
+	if (InputManager::GetSingleton()->KeyPush("Pause"))
+		time_scale_ = time_scale_ == 1.f ? 0.f : 1.f;
+
 	SceneManager::GetSingleton()->Input(_time);
 }
 

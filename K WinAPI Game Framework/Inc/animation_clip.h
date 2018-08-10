@@ -4,6 +4,18 @@
 
 class Texture;
 
+struct AnimationClipInfo
+{
+	int frame_width{};
+	int frame_height{};
+	int start_x{};
+	int start_y{};
+	int end_x{};
+	int count_x{};
+	int count_y{};
+	int total_count{};
+};
+
 class AnimationClip : public Tag
 {
 	friend class AnimationManager;
@@ -19,7 +31,7 @@ private:
 
 	ANIMATION_CLIP type_{};
 	ANIMATION_OPTION option_{};
-	TYPE::AnimationClipInfo animation_clip_info_{};
+	AnimationClipInfo animation_clip_info_{};
 	float completion_time_{};
 
 	std::shared_ptr<Texture> texture_{};

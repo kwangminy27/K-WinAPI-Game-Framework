@@ -52,8 +52,10 @@ protected:
 
 	std::weak_ptr<Scene> scene_{};
 	std::weak_ptr<Layer> layer_{};
-	std::weak_ptr<Texture> texture_{};
+
+	std::shared_ptr<Texture> texture_{};
 	COLORREF color_key_{};
 	bool is_color_key_{};
+
 	std::unique_ptr<Animation, std::function<void(Animation*)>> animation_{};
 };

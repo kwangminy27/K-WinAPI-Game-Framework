@@ -159,6 +159,7 @@
     <ClCompile Include="animation_manager.cpp" />
     <ClCompile Include="audio_manager.cpp" />
     <ClCompile Include="core.cpp" />
+    <ClCompile Include="input_manager.cpp" />
     <ClCompile Include="K WinAPI Game Framework.cpp" />
     <ClCompile Include="layer.cpp" />
     <ClCompile Include="logo_scene.cpp" />
@@ -187,6 +188,7 @@
     <ClInclude Include="audio_manager.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="enum.h" />
+    <ClInclude Include="input_manager.h" />
     <ClInclude Include="layer.h" />
     <ClInclude Include="logo_scene.h" />
     <ClInclude Include="math.h" />
@@ -207,6 +209,7 @@
     <ClInclude Include="type.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="input_manager.inl" />
     <None Include="object_manager.inl" />
     <None Include="scene.inl" />
     <None Include="scene_manager.inl" />

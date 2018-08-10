@@ -24,3 +24,8 @@ enum class ANIMATION_OPTION
 	RETURN,
 	DESTROY
 };
+
+enum class OBJECT
+{
+	NONE
+};

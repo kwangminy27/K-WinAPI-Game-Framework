@@ -129,6 +129,18 @@
     <ClCompile Include="layer.cpp">
       <Filter>04. Scene\02. Layer</Filter>
     </ClCompile>
+    <ClCompile Include="object_manager.cpp">
+      <Filter>05. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="object.cpp">
+      <Filter>05. Object</Filter>
+    </ClCompile>
+    <ClCompile Include="animation.cpp">
+      <Filter>09. Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="logo_scene.cpp">
+      <Filter>04. Scene\01. SceneComponent</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -191,10 +203,31 @@
     <ClInclude Include="layer.h">
       <Filter>04. Scene\02. Layer</Filter>
     </ClInclude>
+    <ClInclude Include="object_manager.h">
+      <Filter>05. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="object.h">
+      <Filter>05. Object</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>09. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="logo_scene.h">
+      <Filter>04. Scene\01. SceneComponent</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="singleton.inl">
       <Filter>K WinAPI Game Framework\Base</Filter>
+    </None>
+    <None Include="scene_manager.inl">
+      <Filter>04. Scene</Filter>
+    </None>
+    <None Include="scene.inl">
+      <Filter>04. Scene</Filter>
+    </None>
+    <None Include="object_manager.inl">
+      <Filter>05. Object</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

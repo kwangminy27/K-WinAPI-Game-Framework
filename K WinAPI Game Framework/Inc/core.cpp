@@ -6,6 +6,8 @@
 #include "texture_manager.h"
 #include "animation_manager.h"
 #include "audio_manager.h"
+#include "scene_manager.h"
+#include "object_manager.h"
 
 using namespace std;
 
@@ -28,6 +30,9 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 		return false;
 
 	if (!AudioManager::GetSingleton()->Initialize())
+		return false;
+
+	if (!SceneManager::GetSingleton()->Initialize())
 		return false;
 
 	if (!_CreateTimer())
@@ -147,6 +152,8 @@ bool Core::_CreateTimer()
 
 void Core::_Logic()
 {
+	SceneManager::GetSingleton()->TrySceneChange();
+
 	timer_->Update();
 	float delta_time = timer_->delta_time() * time_scale_;
 
@@ -154,23 +161,34 @@ void Core::_Logic()
 	_Update(delta_time);
 	_Collision(delta_time);
 	_Render(delta_time);
+
+	ObjectManager::GetSingleton()->EraseExpiredSceneObject();
 }
 
 void Core::_Input(float _time)
 {
+	SceneManager::GetSingleton()->Input(_time);
 }
 
 void Core::_Update(float _time)
 {
+	auto const& scene_manager = SceneManager::GetSingleton();
+
+	scene_manager->Update(_time);
+	scene_manager->LateUpdate(_time);
+
 	AudioManager::GetSingleton()->Update();
 }
 
 void Core::_Collision(float _time)
 {
+	SceneManager::GetSingleton()->Collision(_time);
 }
 
 void Core::_Render(float _time)
 {
+	SceneManager::GetSingleton()->Render(device_context_, _time);
+
 	wstring fps = to_wstring(timer_->frame_per_second());
 	fps += L" FPS";
 	TextOut(device_context_, 0, 0, fps.c_str(), static_cast<int>(fps.size()));

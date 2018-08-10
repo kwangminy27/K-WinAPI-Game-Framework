@@ -7,6 +7,7 @@ class Texture;
 class AnimationClip : public Tag
 {
 	friend class AnimationManager;
+	friend class Animation;
 private:
 	AnimationClip() = default;
 	AnimationClip(AnimationClip const& _other);
@@ -21,5 +22,5 @@ private:
 	TYPE::AnimationClipInfo animation_clip_info_{};
 	float completion_time_{};
 
-	std::weak_ptr<Texture> texture_{};
+	std::shared_ptr<Texture> texture_{};
 };

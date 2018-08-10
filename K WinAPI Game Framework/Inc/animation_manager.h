@@ -22,5 +22,6 @@ private:
 	bool _LoadAnimationClip(std::wstring const& _file_name, std::string const& _path_tag = "AnimationPath");
 
 	std::shared_ptr<AnimationClip> animation_clip_nullptr_{};
+
 	std::unordered_map<std::string, std::shared_ptr<AnimationClip>> animation_clip_map_{};
 };

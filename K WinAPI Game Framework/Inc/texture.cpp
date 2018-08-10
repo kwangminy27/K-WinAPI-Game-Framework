@@ -22,12 +22,12 @@ int Texture::height() const
 	return static_cast<int>(bitmap_structure_.bmHeight);
 }
 
-Texture::Texture(Texture const& _other) : Tag(_other)
+Texture::Texture(Texture const& _other)
 {
 	*this = _other;
 }
 
-Texture::Texture(Texture&& _other) noexcept : Tag(move(_other))
+Texture::Texture(Texture&& _other) noexcept
 {
 	*this = move(_other);
 }

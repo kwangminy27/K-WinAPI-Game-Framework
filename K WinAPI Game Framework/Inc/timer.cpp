@@ -32,3 +32,13 @@ int Timer::frame_per_second() const
 {
 	return frame_per_second_;
 }
+
+Timer::Timer(Timer const& _other)
+{
+	*this = _other;
+}
+
+Timer::Timer(Timer&& _other) noexcept
+{
+	*this = move(_other);
+}

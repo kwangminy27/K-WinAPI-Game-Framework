@@ -12,7 +12,7 @@ enum class MESSAGE_LOOP
 	EXIT
 };
 
-enum class ANIMATION_CLIP_TYPE
+enum class ANIMATION_CLIP
 {
 	ATLAS,
 	FRAME

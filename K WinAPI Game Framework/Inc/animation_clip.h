@@ -1,8 +1,10 @@
 #pragma once
 
+#include "tag.h"
+
 class Texture;
 
-class AnimationClip
+class AnimationClip : public Tag
 {
 	friend class AnimationManager;
 private:
@@ -12,13 +14,12 @@ private:
 	AnimationClip& operator=(AnimationClip const&) = default;
 	AnimationClip& operator=(AnimationClip&&) noexcept = default;
 
-	void _Release();
+	virtual void _Release() override;
 
-	std::weak_ptr<Texture> texture_{};
-
-	std::string tag_{};
-	ANIMATION_CLIP_TYPE type_{};
+	ANIMATION_CLIP type_{};
 	ANIMATION_OPTION option_{};
 	TYPE::AnimationClipInfo animation_clip_info_{};
 	float completion_time_{};
+
+	std::weak_ptr<Texture> texture_{};
 };

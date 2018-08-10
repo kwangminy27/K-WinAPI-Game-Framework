@@ -143,10 +143,9 @@ bool AnimationManager::_LoadAnimationClip(wstring const& _file_name, string cons
 			delete _p;
 		} };
 
-		animation_clip->texture_ = texture;
+		animation_clip->set_tag(tag);
 
-		animation_clip->tag_ = tag;
-		animation_clip->type_ = static_cast<ANIMATION_CLIP_TYPE>(stoi(type));
+		animation_clip->type_ = static_cast<ANIMATION_CLIP>(stoi(type));
 		animation_clip->option_ = static_cast<ANIMATION_OPTION>(stoi(option));
 		animation_clip->animation_clip_info_.frame_width = stoi(frame_width);
 		animation_clip->animation_clip_info_.frame_height = stoi(frame_height);
@@ -157,6 +156,8 @@ bool AnimationManager::_LoadAnimationClip(wstring const& _file_name, string cons
 		animation_clip->animation_clip_info_.count_y = stoi(count_y);
 		animation_clip->animation_clip_info_.total_count = stoi(total_count);
 		animation_clip->completion_time_ = stof(completion_time);
+
+		animation_clip->texture_ = texture;
 
 		animation_clip_map_.insert(make_pair(move(tag), move(animation_clip)));
 	}

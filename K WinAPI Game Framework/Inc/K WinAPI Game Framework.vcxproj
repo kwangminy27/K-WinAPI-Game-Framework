@@ -159,9 +159,13 @@
     <ClCompile Include="audio_manager.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="K WinAPI Game Framework.cpp" />
+    <ClCompile Include="layer.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="path_manager.cpp" />
     <ClCompile Include="physics.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="scene_component.cpp" />
+    <ClCompile Include="scene_manager.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
@@ -178,10 +182,14 @@
     <ClInclude Include="audio_manager.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="enum.h" />
+    <ClInclude Include="layer.h" />
     <ClInclude Include="math.h" />
     <ClInclude Include="path_manager.h" />
     <ClInclude Include="physics.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="scene_component.h" />
+    <ClInclude Include="scene_manager.h" />
     <ClInclude Include="singleton.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="tag.h" />

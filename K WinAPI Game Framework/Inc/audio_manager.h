@@ -2,7 +2,7 @@
 
 #include "singleton.h"
 
-class AudioManager : public Singleton<AudioManager>
+class AudioManager final : public Singleton<AudioManager>
 {
 	friend class Singleton<AudioManager>;
 public:

@@ -117,6 +117,18 @@
     <ClCompile Include="animation_manager.cpp">
       <Filter>09. Animation</Filter>
     </ClCompile>
+    <ClCompile Include="scene.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_manager.cpp">
+      <Filter>04. Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="scene_component.cpp">
+      <Filter>04. Scene\01. SceneComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="layer.cpp">
+      <Filter>04. Scene\02. Layer</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -166,6 +178,18 @@
     </ClInclude>
     <ClInclude Include="animation_clip.h">
       <Filter>09. Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_manager.h">
+      <Filter>04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>04. Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="scene_component.h">
+      <Filter>04. Scene\01. SceneComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="layer.h">
+      <Filter>04. Scene\02. Layer</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

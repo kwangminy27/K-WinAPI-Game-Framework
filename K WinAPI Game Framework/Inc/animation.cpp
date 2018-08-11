@@ -68,6 +68,9 @@ void Animation::_Update(float _time)
 	if (!current_clip_)
 		return;
 
+	if (object_.expired())
+		return;
+
 	auto const& animation_clip_info = current_clip_->animation_clip_info_;
 	float interval_time = current_clip_->completion_time_ / animation_clip_info.total_count;
 

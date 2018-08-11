@@ -12,7 +12,6 @@ public:
 	void Resume();
 
 	std::shared_ptr<DirectX::SoundEffect> const& FindSoundEffect(std::string const& _tag);
-
 	void AddSoundEffectInstance(std::unique_ptr<DirectX::SoundEffectInstance> _sound_effect_instance);
 
 private:
@@ -22,7 +21,7 @@ private:
 
 	virtual void _Release() override;
 
-	bool _LoadAnimationDataSheet(std::wstring const& _file_name, std::string const& _path_tag = "DataPath");
+	bool _LoadSoundDataSheet(std::wstring const& _file_name, std::string const& _path_tag = "DataPath");
 	bool _LoadSoundEffect(std::string const& _tag, std::wstring const& _file_name, std::string const& _path_tag = "SoundPath");
 
 	std::shared_ptr<DirectX::SoundEffect> sound_effect_nullptr_{};

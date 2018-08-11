@@ -12,9 +12,9 @@ class Layer final : public Tag
 	friend class ObjectManager;
 public:
 	int z_order() const;
-	void set_z_order(int _z_order);
-
 	std::shared_ptr<Scene> scene() const;
+
+	void set_z_order(int _z_order);
 	void set_scene(std::shared_ptr<Scene> const& _scene);
 
 	std::shared_ptr<Object> const& FindObject(std::string const& _tag) const;

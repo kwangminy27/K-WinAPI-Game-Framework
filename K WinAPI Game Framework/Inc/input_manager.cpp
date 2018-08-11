@@ -69,8 +69,7 @@ void InputManager::_Release()
 
 void InputManager::_AddKey()
 {
-	string tag = key_buffer_->tag;
-	key_map_.insert(make_pair(move(tag), move(key_buffer_)));
+	key_map_.insert(make_pair(move(key_tag_buffer_), move(key_buffer_)));
 }
 
 unique_ptr<KeyInfo> const& InputManager::_FindKey(string const& _tag) const

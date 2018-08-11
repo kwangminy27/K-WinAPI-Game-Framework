@@ -9,29 +9,29 @@ float Math::PI()
 	return kPI;
 }
 
-float Math::GetDistance(Point const& src, Point const& dest)
+float Math::GetDistance(Point const& _src, Point const& _dest)
 {
-	float width = dest.x - src.x;
-	float height = dest.y - src.y;
+	float width = _dest.x - _src.x;
+	float height = _dest.y - _src.y;
 	return sqrt((width * width) + (height * height));
 }
 
-float Math::GetAngle(Point const& src, Point const& dest)
+float Math::GetAngle(Point const& _src, Point const& _dest)
 {
-	float width = dest.x - src.x;
-	float diagonal = Math::GetDistance(src, dest);
+	float width = _dest.x - _src.x;
+	float diagonal = Math::GetDistance(_src, _dest);
 	float cos_theta = width / diagonal;
 	float theta = Math::ConvertToDegrees(acos(cos_theta));
 
-	return dest.y - src.y < 0.f ? -theta : theta;
+	return _dest.y - _src.y < 0.f ? -theta : theta;
 }
 
-float Math::ConvertToDegrees(float radians)
+float Math::ConvertToDegrees(float _radians)
 {
-	return radians * (180.f / Math::PI());
+	return _radians * (180.f / Math::PI());
 }
 
-float Math::ConvertToRadians(float degrees)
+float Math::ConvertToRadians(float _degrees)
 {
-	return degrees * (Math::PI() / 180.f);
+	return _degrees * (Math::PI() / 180.f);
 }

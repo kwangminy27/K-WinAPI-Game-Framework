@@ -12,9 +12,6 @@ shared_ptr<Scene> SceneComponent::scene() const
 
 void SceneComponent::set_scene(shared_ptr<Scene> const& _scene)
 {
-	if (!_scene)
-		return;
-
 	scene_ = _scene;
 }
 

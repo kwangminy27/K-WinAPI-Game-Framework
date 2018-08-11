@@ -13,18 +13,21 @@ class Object : public Tag, public std::enable_shared_from_this<Object>
 	friend class ObjectManager;
 public:
 	OBJECT type() const;
-
+	TYPE::Point const& position() const;
+	TYPE::Point const& size() const;
+	TYPE::Point const& pivot() const;
 	std::shared_ptr<Scene> scene() const;
-	void set_scene(std::shared_ptr<Scene> const& _scene);
-
 	std::shared_ptr<Layer> layer() const;
-	void set_layer(std::shared_ptr<Layer> const& _layer);
-
 	std::shared_ptr<Texture> texture() const;
+	COLORREF const& color_key() const;
+
+	void set_position(TYPE::Point const& _position);
+	void set_size(TYPE::Point const& _size);
+	void set_pivot(TYPE::Point const& _pivot);
+	void set_scene(std::shared_ptr<Scene> const& _scene);
+	void set_layer(std::shared_ptr<Layer> const& _layer);
 	void set_texture(std::string const& _tag);
 	void set_texture(std::shared_ptr<Texture> const& _texture);
-
-	COLORREF const& color_key() const;
 	void set_color_key(COLORREF const& _color_key);
 
 protected:
@@ -49,13 +52,13 @@ protected:
 	virtual std::unique_ptr<Object, std::function<void(Object*)>> _Clone() const = 0;
 
 	OBJECT type_{ OBJECT::NONE };
-
+	TYPE::Point position_{};
+	TYPE::Point size_{};
+	TYPE::Point pivot_{};
 	std::weak_ptr<Scene> scene_{};
 	std::weak_ptr<Layer> layer_{};
-
 	std::shared_ptr<Texture> texture_{};
 	COLORREF color_key_{};
 	bool is_color_key_{};
-
 	std::unique_ptr<Animation, std::function<void(Animation*)>> animation_{};
 };

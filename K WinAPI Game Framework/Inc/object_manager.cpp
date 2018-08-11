@@ -23,12 +23,12 @@ void ObjectManager::ErasePrototype(shared_ptr<Scene> const& _scene)
 
 shared_ptr<Object> ObjectManager::CreateCloneObject(string const& _tag, shared_ptr<Layer> const& _layer)
 {
-	if (!_layer)
-		return object_nullptr_;
-
 	auto const& prototype = _FindPrototype(_tag);
 
 	if (!prototype)
+		return object_nullptr_;
+
+	if (!_layer)
 		return object_nullptr_;
 
 	shared_ptr<Object> object{ prototype->_Clone() };

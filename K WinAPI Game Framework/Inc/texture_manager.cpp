@@ -82,7 +82,7 @@ bool TextureManager::_LoadTexture(string const& _tag, wstring const& _file_name,
 
 	texture->set_tag(_tag);
 
-	if (!texture->_LoadTexture(_tag, _file_name, _path_tag))
+	if (!texture->_LoadTexture(_file_name, _path_tag))
 		return false;
 
 	texture_map_.insert(make_pair(_tag, move(texture)));

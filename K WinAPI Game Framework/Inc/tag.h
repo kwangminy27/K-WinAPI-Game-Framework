@@ -4,12 +4,11 @@ class Tag
 {
 public:
 	std::string const& tag() const;
-	void set_tag(std::string const& _tag);
-
 	bool enablement() const;
-	void set_enablement(bool _state);
-
 	bool activation() const;
+
+	void set_tag(std::string const& _tag);
+	void set_enablement(bool _state);
 	void set_activation(bool _state);
 
 protected:

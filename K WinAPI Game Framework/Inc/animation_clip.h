@@ -33,6 +33,5 @@ private:
 	ANIMATION_OPTION option_{};
 	AnimationClipInfo animation_clip_info_{};
 	float completion_time_{};
-
 	std::shared_ptr<Texture> texture_{};
 };

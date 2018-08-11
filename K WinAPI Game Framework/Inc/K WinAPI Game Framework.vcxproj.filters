@@ -144,6 +144,9 @@
     <ClCompile Include="input_manager.cpp">
       <Filter>02. Input</Filter>
     </ClCompile>
+    <ClCompile Include="camera_manager.cpp">
+      <Filter>03. Camera</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -220,6 +223,9 @@
     </ClInclude>
     <ClInclude Include="input_manager.h">
       <Filter>02. Input</Filter>
+    </ClInclude>
+    <ClInclude Include="camera_manager.h">
+      <Filter>03. Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

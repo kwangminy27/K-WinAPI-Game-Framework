@@ -12,7 +12,6 @@ public:
 
 	void set_default_clip(std::string const& _tag);
 	void set_current_clip(std::string const& _tag);
-
 	void set_object(std::shared_ptr<Object> const& _object);
 
 private:
@@ -39,9 +38,7 @@ private:
 	int current_x_{};
 	int current_y_{};
 	float elapsed_time_{};
-
 	std::shared_ptr<AnimationClip> default_clip_{};
 	std::shared_ptr<AnimationClip> current_clip_{};
-
 	std::weak_ptr<Object> object_{};
 };

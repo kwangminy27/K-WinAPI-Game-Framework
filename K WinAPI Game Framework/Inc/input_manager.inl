@@ -19,7 +19,7 @@ void InputManager::_AddKey(string const& _tag, Types ... _Args)
 	if (!key_buffer_)
 		key_buffer_ = make_unique<KeyInfo>();
 
-	key_buffer_->tag = _tag;
+	key_tag_buffer_ = _tag;
 
 	_AddKey(_Args...);
 }

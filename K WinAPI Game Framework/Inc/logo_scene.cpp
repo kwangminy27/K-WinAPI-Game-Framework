@@ -3,11 +3,11 @@
 
 using namespace std;
 
-LogoScene::LogoScene(LogoScene const& _other)
+LogoScene::LogoScene(LogoScene const& _other) : SceneComponent(_other)
 {
 }
 
-LogoScene::LogoScene(LogoScene&& _other) noexcept
+LogoScene::LogoScene(LogoScene&& _other) noexcept : SceneComponent(move(_other))
 {
 }
 

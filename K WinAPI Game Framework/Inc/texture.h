@@ -19,7 +19,7 @@ protected:
 
 	virtual void _Release() override;
 
-	bool _LoadTexture(std::string const& _tag, std::wstring const& _file_name, std::string const& _path_tag);
+	bool _LoadTexture(std::wstring const& _file_name, std::string const& _path_tag);
 
 	HDC memory_device_context_{};
 	HBITMAP bitmap_{};

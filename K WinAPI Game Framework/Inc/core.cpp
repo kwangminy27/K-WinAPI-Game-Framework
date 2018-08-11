@@ -2,13 +2,14 @@
 #include "core.h"
 
 #include "timer.h"
+#include "input_manager.h"
+#include "camera_manager.h"
 #include "path_manager.h"
 #include "texture_manager.h"
 #include "animation_manager.h"
 #include "audio_manager.h"
 #include "scene_manager.h"
 #include "object_manager.h"
-#include "input_manager.h"
 
 using namespace std;
 
@@ -21,6 +22,12 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 
 	device_context_ = GetDC(window_);
 
+	if (!InputManager::GetSingleton()->Initialize())
+		return false;
+
+	if (!CameraManager::GetSingleton()->Initialize())
+		return false;
+
 	if (!PathManager::GetSingleton()->Initialize())
 		return false;
 
@@ -31,9 +38,6 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 		return false;
 
 	if (!AudioManager::GetSingleton()->Initialize())
-		return false;
-
-	if (!InputManager::GetSingleton()->Initialize())
 		return false;
 
 	if (!SceneManager::GetSingleton()->Initialize())
@@ -56,7 +60,16 @@ int Core::Run()
 			DispatchMessage(&message);
 		}
 		else
+		{
+			timer_->Update();
+			InputManager::GetSingleton()->Update();
+
+			SceneManager::GetSingleton()->TrySceneChange();
+
 			_Logic();
+
+			ObjectManager::GetSingleton()->EraseExpiredSceneObject();
+		}
 	}
 
 	return static_cast<int>(message.wParam);
@@ -156,18 +169,12 @@ bool Core::_CreateTimer()
 
 void Core::_Logic()
 {
-	timer_->Update();
 	float delta_time = timer_->delta_time() * time_scale_;
 
-	InputManager::GetSingleton()->Update();
-
-	SceneManager::GetSingleton()->TrySceneChange();
 	_Input(delta_time);
 	_Update(delta_time);
 	_Collision(delta_time);
 	_Render(delta_time);
-
-	ObjectManager::GetSingleton()->EraseExpiredSceneObject();
 }
 
 void Core::_Input(float _time)
@@ -185,6 +192,7 @@ void Core::_Update(float _time)
 	scene_manager->Update(_time);
 	scene_manager->LateUpdate(_time);
 
+	CameraManager::GetSingleton()->Update(_time);
 	AudioManager::GetSingleton()->Update();
 }
 

@@ -6,14 +6,13 @@ class Object;
 
 struct KeyInfo
 {
-	std::string tag{};
 	std::vector<__int8> element{};
 	bool push{};
 	bool pressed{};
 	bool up{};
 };
 
-class InputManager : public Singleton<InputManager>
+class InputManager final : public Singleton<InputManager>
 {
 	friend class Singleton<InputManager>;
 public:
@@ -41,6 +40,7 @@ private:
 
 	std::unordered_map<std::string, std::unique_ptr<KeyInfo>> key_map_{};
 	std::unique_ptr<KeyInfo> key_buffer_{};
+	std::string key_tag_buffer_{};
 };
 
 #include "input_manager.inl"

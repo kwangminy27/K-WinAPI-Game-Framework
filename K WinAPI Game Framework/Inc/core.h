@@ -14,8 +14,8 @@ public:
 	HINSTANCE instance() const;
 	HWND window() const;
 	HDC device_context() const;
-
 	MESSAGE_LOOP state() const;
+
 	void set_state(MESSAGE_LOOP _state);
 
 private:
@@ -40,9 +40,7 @@ private:
 	HINSTANCE instance_{};
 	HWND window_{};
 	HDC device_context_{};
-
 	MESSAGE_LOOP state_{ MESSAGE_LOOP::RUN };
-
 	std::unique_ptr<Timer, std::function<void(Timer*)>> timer_{};
 	float time_scale_{};
 };

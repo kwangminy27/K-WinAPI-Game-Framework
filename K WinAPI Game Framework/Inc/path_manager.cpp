@@ -16,7 +16,6 @@ bool PathManager::Initialize()
 	_AddPath("SoundPath", "Sound\\");
 	_AddPath("TexturePath", "Texture\\");
 	
-
 	return true;
 }
 

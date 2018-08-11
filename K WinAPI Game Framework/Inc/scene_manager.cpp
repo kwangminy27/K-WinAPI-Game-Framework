@@ -9,8 +9,10 @@ using namespace std;
 
 bool SceneManager::Initialize()
 {
-	scene_ = _CreateScene("Hello, world!");
-	scene_->scene_component_ = scene_->_CreateSceneComponent<LogoScene>("Hello, world!");
+	if (!(scene_ = _CreateScene("Hello, world!")))
+		return false;
+	if (!(scene_->scene_component_ = scene_->_CreateSceneComponent<LogoScene>("Hello, world!")))
+		return false;
 
 	return true;
 }

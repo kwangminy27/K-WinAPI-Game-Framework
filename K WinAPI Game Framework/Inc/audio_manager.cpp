@@ -17,7 +17,7 @@ bool AudioManager::Initialize()
 #endif
 	audio_engine_ = std::make_unique<AudioEngine>(audio_engine_flags);
 
-	if (!_LoadAnimationDataSheet(L"sound.csv"))
+	if (!_LoadSoundDataSheet(L"sound.csv"))
 		return false;
 
 	return true;
@@ -57,7 +57,7 @@ void AudioManager::_Release()
 {
 }
 
-bool AudioManager::_LoadAnimationDataSheet(wstring const& _file_name, string const& _path_tag)
+bool AudioManager::_LoadSoundDataSheet(wstring const& _file_name, string const& _path_tag)
 {
 	path path_buffer = PathManager::GetSingleton()->FindPath(_path_tag);
 

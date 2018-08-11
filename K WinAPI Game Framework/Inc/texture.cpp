@@ -39,7 +39,7 @@ void Texture::_Release()
 	DeleteDC(memory_device_context_);
 }
 
-bool Texture::_LoadTexture(string const& _tag, wstring const& _file_name, string const& _path_tag)
+bool Texture::_LoadTexture(wstring const& _file_name, string const& _path_tag)
 {
 	const auto& core = Core::GetSingleton();
 

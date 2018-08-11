@@ -1,5 +1,7 @@
 #pragma once
+
 #include "scene_component.h"
+
 class LogoScene : public SceneComponent
 {
 	friend class Scene;

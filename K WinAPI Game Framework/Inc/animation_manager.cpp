@@ -42,7 +42,7 @@ bool AnimationManager::_LoadAnimationDataSheet(wstring const& _file_name, string
 
 	ifstream file{ full_path };
 
-	if (file.bad())
+	if (file.fail())
 		return false;
 
 	while (true)
@@ -81,7 +81,7 @@ bool AnimationManager::_LoadAnimationClip(wstring const& _file_name, string cons
 
 	ifstream file{ full_path };
 
-	if (file.bad())
+	if (file.fail())
 		return false;
 
 	string texture_atlas_tag{};

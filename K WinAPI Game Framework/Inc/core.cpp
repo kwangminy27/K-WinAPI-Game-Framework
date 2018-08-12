@@ -10,6 +10,7 @@
 #include "audio_manager.h"
 #include "scene_manager.h"
 #include "object_manager.h"
+#include "collision_manager.h"
 
 using namespace std;
 
@@ -21,6 +22,12 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 	_CreateWindow(_class_name, _window_name);
 
 	device_context_ = GetDC(window_);
+
+	if (!_CreateBrush())
+		return false;
+
+	if (!_CreatePen())
+		return false;
 
 	if (!InputManager::GetSingleton()->Initialize())
 		return false;
@@ -38,6 +45,9 @@ bool Core::Initialize(wstring const& _class_name, wstring const& _window_name, H
 		return false;
 
 	if (!AudioManager::GetSingleton()->Initialize())
+		return false;
+
+	if (!CollisionManager::GetSingleton()->Initialize())
 		return false;
 
 	if (!SceneManager::GetSingleton()->Initialize())
@@ -90,6 +100,16 @@ HDC Core::device_context() const
 	return device_context_;
 }
 
+HBRUSH Core::brush(COLOR _color)
+{
+	return brush_.at(static_cast<size_t>(_color));
+}
+
+HPEN Core::pen(COLOR _color)
+{
+	return pen_.at(static_cast<size_t>(_color));
+}
+
 MESSAGE_LOOP Core::state() const
 {
 	return state_;
@@ -103,6 +123,52 @@ void Core::set_state(MESSAGE_LOOP _state)
 void Core::_Release()
 {
 	ReleaseDC(window_, device_context_);
+
+	_ReleaseBrush();
+	_ReleasePen();
+}
+
+void Core::_Logic()
+{
+	float delta_time = timer_->delta_time() * time_scale_;
+
+	_Input(delta_time);
+	_Update(delta_time);
+	_Collision(delta_time);
+	_Render(delta_time);
+}
+
+void Core::_Input(float _time)
+{
+	if (InputManager::GetSingleton()->KeyPush("Pause"))
+		time_scale_ = time_scale_ == 1.f ? 0.f : 1.f;
+
+	SceneManager::GetSingleton()->Input(_time);
+}
+
+void Core::_Update(float _time)
+{
+	auto const& scene_manager = SceneManager::GetSingleton();
+
+	scene_manager->Update(_time);
+	scene_manager->LateUpdate(_time);
+
+	CameraManager::GetSingleton()->Update(_time);
+	AudioManager::GetSingleton()->Update();
+}
+
+void Core::_Collision(float _time)
+{
+	SceneManager::GetSingleton()->Collision(_time);
+}
+
+void Core::_Render(float _time)
+{
+	SceneManager::GetSingleton()->Render(device_context_, _time);
+
+	wstring fps = to_wstring(timer_->frame_per_second());
+	fps += L" FPS";
+	TextOut(device_context_, 0, 0, fps.c_str(), static_cast<int>(fps.size()));
 }
 
 LRESULT Core::_WindowProc(HWND _window, UINT _message, WPARAM _w_param, LPARAM _l_param)
@@ -157,6 +223,34 @@ void Core::_CreateWindow(wstring const& _class_name, wstring const& _window_name
 	ShowWindow(window_, SW_SHOW);
 }
 
+bool Core::_CreateBrush()
+{
+	if (!(brush_.at(static_cast<size_t>(COLOR::RED)) = CreateSolidBrush(RGB(255, 0, 0))))
+		return false;
+
+	if (!(brush_.at(static_cast<size_t>(COLOR::GREEN)) = CreateSolidBrush(RGB(0, 255, 0))))
+		return false;
+
+	if (!(brush_.at(static_cast<size_t>(COLOR::BLUE)) = CreateSolidBrush(RGB(0, 0, 255))))
+		return false;
+
+	return true;
+}
+
+bool Core::_CreatePen()
+{
+	if (!(pen_.at(static_cast<size_t>(COLOR::RED)) = CreatePen(PS_SOLID, 2, RGB(255, 0, 0))))
+		return false;
+
+	if (!(pen_.at(static_cast<size_t>(COLOR::GREEN)) = CreatePen(PS_SOLID, 2, RGB(0, 255, 0))))
+		return false;
+
+	if (!(pen_.at(static_cast<size_t>(COLOR::BLUE)) = CreatePen(PS_SOLID, 2, RGB(0, 0, 255))))
+		return false;
+
+	return true;
+}
+
 bool Core::_CreateTimer()
 {
 	timer_ = unique_ptr<Timer, function<void(Timer*)>>(new Timer, [](Timer* p) {
@@ -167,45 +261,14 @@ bool Core::_CreateTimer()
 	return true;
 }
 
-void Core::_Logic()
+void Core::_ReleaseBrush()
 {
-	float delta_time = timer_->delta_time() * time_scale_;
-
-	_Input(delta_time);
-	_Update(delta_time);
-	_Collision(delta_time);
-	_Render(delta_time);
+	for(auto i = 0; i < brush_.size(); ++i)
+		DeleteObject(brush_.at(i));
 }
 
-void Core::_Input(float _time)
+void Core::_ReleasePen()
 {
-	if (InputManager::GetSingleton()->KeyPush("Pause"))
-		time_scale_ = time_scale_ == 1.f ? 0.f : 1.f;
-
-	SceneManager::GetSingleton()->Input(_time);
-}
-
-void Core::_Update(float _time)
-{
-	auto const& scene_manager = SceneManager::GetSingleton();
-
-	scene_manager->Update(_time);
-	scene_manager->LateUpdate(_time);
-
-	CameraManager::GetSingleton()->Update(_time);
-	AudioManager::GetSingleton()->Update();
-}
-
-void Core::_Collision(float _time)
-{
-	SceneManager::GetSingleton()->Collision(_time);
-}
-
-void Core::_Render(float _time)
-{
-	SceneManager::GetSingleton()->Render(device_context_, _time);
-
-	wstring fps = to_wstring(timer_->frame_per_second());
-	fps += L" FPS";
-	TextOut(device_context_, 0, 0, fps.c_str(), static_cast<int>(fps.size()));
+	for (auto i = 0; i < pen_.size(); ++i)
+		DeleteObject(pen_.at(i));
 }

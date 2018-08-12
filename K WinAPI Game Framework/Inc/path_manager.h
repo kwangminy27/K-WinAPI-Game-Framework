@@ -7,6 +7,7 @@ class PathManager final : public Singleton<PathManager>
 	friend class Singleton<PathManager>;
 public:
 	bool Initialize();
+
 	std::filesystem::path const& FindPath(std::string const& _tag) const;
 
 private:

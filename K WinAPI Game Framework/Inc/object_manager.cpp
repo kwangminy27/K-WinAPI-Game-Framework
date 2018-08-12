@@ -7,20 +7,6 @@
 
 using namespace std;
 
-void ObjectManager::ErasePrototype(shared_ptr<Scene> const& _scene)
-{
-	if (!_scene)
-		return;
-
-	for (auto iter = prototype_map_.begin(); iter != prototype_map_.end();)
-	{
-		if (iter->second->scene() == _scene)
-			iter = prototype_map_.erase(iter);
-		else
-			++iter;
-	}
-}
-
 shared_ptr<Object> ObjectManager::CreateCloneObject(string const& _tag, shared_ptr<Layer> const& _layer)
 {
 	auto const& prototype = _FindPrototype(_tag);
@@ -44,6 +30,20 @@ shared_ptr<Object> ObjectManager::CreateCloneObject(string const& _tag, shared_p
 auto ObjectManager::FindObjects(string const& _tag) const
 {
 	return scene_object_multimap_.equal_range(_tag);
+}
+
+void ObjectManager::ErasePrototype(shared_ptr<Scene> const& _scene)
+{
+	if (!_scene)
+		return;
+
+	for (auto iter = prototype_map_.begin(); iter != prototype_map_.end();)
+	{
+		if (iter->second->scene() == _scene)
+			iter = prototype_map_.erase(iter);
+		else
+			++iter;
+	}
 }
 
 void ObjectManager::EraseExpiredSceneObject()

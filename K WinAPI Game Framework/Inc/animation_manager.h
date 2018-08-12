@@ -9,6 +9,7 @@ class AnimationManager final : public Singleton<AnimationManager>
 	friend class Singleton<AnimationManager>;
 public:
 	bool Initialize();
+
 	std::shared_ptr<AnimationClip> const& FindAnimationClip(std::string const& _tag);
 
 private:

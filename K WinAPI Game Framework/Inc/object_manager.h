@@ -11,10 +11,12 @@ class ObjectManager : public Singleton<ObjectManager>
 	friend class Singleton<ObjectManager>;
 public:
 	template <typename T> bool CreatePrototype(std::string const& _tag, std::shared_ptr<Scene> const& _scene);
-	void ErasePrototype(std::shared_ptr<Scene> const& _scene);
 	template <typename T> std::shared_ptr<Object> CreateObject(std::string const& _tag, std::shared_ptr<Layer> const& _layer);
 	std::shared_ptr<Object> CreateCloneObject(std::string const& _tag, std::shared_ptr<Layer> const& _layer);
+
 	auto FindObjects(std::string const& _tag) const;
+
+	void ErasePrototype(std::shared_ptr<Scene> const& _scene);
 	void EraseExpiredSceneObject();
 
 private:

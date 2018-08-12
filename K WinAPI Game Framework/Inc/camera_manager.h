@@ -10,6 +10,7 @@ class CameraManager final : public Singleton<CameraManager>
 public:
 	bool Initialize();
 	void Update(float _time);
+
 	void Move(TYPE::Point const& _direction, float _time);
 
 	TYPE::Point const& position() const;

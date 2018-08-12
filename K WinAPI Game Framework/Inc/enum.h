@@ -12,6 +12,14 @@ enum class MESSAGE_LOOP
 	EXIT
 };
 
+enum class COLOR
+{
+	RED,
+	GREEN,
+	BLUE,
+	END
+};
+
 enum class ANIMATION_CLIP
 {
 	ATLAS,
@@ -28,4 +36,20 @@ enum class ANIMATION_OPTION
 enum class OBJECT
 {
 	NONE
+};
+
+enum class COLLIDER
+{
+	POINT,
+	RECT,
+	CIRCLE,
+	PIXEL
+};
+
+enum class COLLISION_CALLBACK
+{
+	ENTER,
+	STAY,
+	LEAVE,
+	END
 };

@@ -47,6 +47,11 @@ COLORREF const& Object::color_key() const
 	return color_key_;
 }
 
+list<shared_ptr<Collider>>& Object::collider_list()
+{
+	return collider_list_;
+}
+
 void Object::set_position(Point const& _position)
 {
 	position_ = _position;

@@ -40,7 +40,7 @@ bool TextureManager::_LoadTextureDataSheet(wstring const& _file_name, string con
 
 	ifstream file{ full_path };
 
-	if (file.bad())
+	if (file.fail())
 		return false;
 
 	while (true)

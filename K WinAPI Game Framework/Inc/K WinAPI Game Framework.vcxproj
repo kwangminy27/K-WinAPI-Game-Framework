@@ -159,6 +159,8 @@
     <ClCompile Include="animation_manager.cpp" />
     <ClCompile Include="audio_manager.cpp" />
     <ClCompile Include="camera_manager.cpp" />
+    <ClCompile Include="collider.cpp" />
+    <ClCompile Include="collision_manager.cpp" />
     <ClCompile Include="core.cpp" />
     <ClCompile Include="input_manager.cpp" />
     <ClCompile Include="K WinAPI Game Framework.cpp" />
@@ -188,6 +190,8 @@
     <ClInclude Include="animation_manager.h" />
     <ClInclude Include="audio_manager.h" />
     <ClInclude Include="camera_manager.h" />
+    <ClInclude Include="collider.h" />
+    <ClInclude Include="collision_manager.h" />
     <ClInclude Include="core.h" />
     <ClInclude Include="enum.h" />
     <ClInclude Include="input_manager.h" />
@@ -212,6 +216,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="input_manager.inl" />
+    <None Include="object.inl" />
     <None Include="object_manager.inl" />
     <None Include="scene.inl" />
     <None Include="scene_manager.inl" />

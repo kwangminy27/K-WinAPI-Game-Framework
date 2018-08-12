@@ -38,6 +38,11 @@ void AudioManager::Resume()
 	audio_engine_->Resume();
 }
 
+void AudioManager::AddSoundEffectInstance(unique_ptr<SoundEffectInstance> _sound_effect_instance)
+{
+	sound_effect_instance_list_.push_back(move(_sound_effect_instance));
+}
+
 shared_ptr<SoundEffect> const& AudioManager::FindSoundEffect(string const& _tag)
 {
 	auto iter = sound_effect_map_.find(_tag);
@@ -46,11 +51,6 @@ shared_ptr<SoundEffect> const& AudioManager::FindSoundEffect(string const& _tag)
 		return sound_effect_nullptr_;
 
 	return iter->second;
-}
-
-void AudioManager::AddSoundEffectInstance(unique_ptr<SoundEffectInstance> _sound_effect_instance)
-{
-	sound_effect_instance_list_.push_back(move(_sound_effect_instance));
 }
 
 void AudioManager::_Release()

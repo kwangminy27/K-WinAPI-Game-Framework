@@ -147,6 +147,12 @@
     <ClCompile Include="camera_manager.cpp">
       <Filter>03. Camera</Filter>
     </ClCompile>
+    <ClCompile Include="collision_manager.cpp">
+      <Filter>06. Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="collider.cpp">
+      <Filter>06. Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -227,6 +233,12 @@
     <ClInclude Include="camera_manager.h">
       <Filter>03. Camera</Filter>
     </ClInclude>
+    <ClInclude Include="collision_manager.h">
+      <Filter>06. Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="collider.h">
+      <Filter>06. Collision</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="singleton.inl">
@@ -243,6 +255,9 @@
     </None>
     <None Include="input_manager.inl">
       <Filter>02. Input</Filter>
+    </None>
+    <None Include="object.inl">
+      <Filter>05. Object</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

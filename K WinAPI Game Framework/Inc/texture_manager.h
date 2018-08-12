@@ -9,6 +9,7 @@ class TextureManager final : public Singleton<TextureManager>
 	friend class Singleton<TextureManager>;
 public:
 	bool Initialize();
+
 	std::shared_ptr<Texture> const& FindTexture(std::string const& _tag) const;
 
 private:

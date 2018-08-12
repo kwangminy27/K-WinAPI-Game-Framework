@@ -6,6 +6,7 @@ class Scene;
 class Layer;
 class Texture;
 class Animation;
+class Collider;
 
 class Object : public Tag, public std::enable_shared_from_this<Object>
 {
@@ -20,6 +21,7 @@ public:
 	std::shared_ptr<Layer> layer() const;
 	std::shared_ptr<Texture> texture() const;
 	COLORREF const& color_key() const;
+	std::list<std::shared_ptr<Collider>>& collider_list();
 
 	void set_position(TYPE::Point const& _position);
 	void set_size(TYPE::Point const& _size);
@@ -48,8 +50,11 @@ protected:
 	virtual void _Render(HDC _device_context, float _time);
 
 	bool _AddAnimationClip(std::string const& _tag);
+	template <typename T> std::shared_ptr<Collider> _AddCollider(std::string const& _tag);
 
 	virtual std::unique_ptr<Object, std::function<void(Object*)>> _Clone() const = 0;
+
+	std::shared_ptr<Collider> collider_nullptr_{};
 
 	OBJECT type_{ OBJECT::NONE };
 	TYPE::Point position_{};
@@ -61,4 +66,7 @@ protected:
 	COLORREF color_key_{};
 	bool is_color_key_{};
 	std::unique_ptr<Animation, std::function<void(Animation*)>> animation_{};
+	std::list<std::shared_ptr<Collider>> collider_list_{};
 };
+
+#include "object.inl"

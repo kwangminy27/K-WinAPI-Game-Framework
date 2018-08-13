@@ -73,6 +73,9 @@
     <Filter Include="05. Object\06. UI">
       <UniqueIdentifier>{385f15f6-b782-4e95-9fcf-f068322e5a23}</UniqueIdentifier>
     </Filter>
+    <Filter Include="11. Video">
+      <UniqueIdentifier>{6fa4fd80-d39c-4cfb-9646-9b2f9f465479}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="K WinAPI Game Framework.cpp">
@@ -152,6 +155,9 @@
     </ClCompile>
     <ClCompile Include="collider.cpp">
       <Filter>06. Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="video_manager.cpp">
+      <Filter>11. Video</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -238,6 +244,9 @@
     </ClInclude>
     <ClInclude Include="collider.h">
       <Filter>06. Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="video_manager.h">
+      <Filter>11. Video</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

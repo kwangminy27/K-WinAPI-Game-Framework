@@ -183,6 +183,7 @@
     <ClCompile Include="texture_manager.cpp" />
     <ClCompile Include="timer.cpp" />
     <ClCompile Include="type.cpp" />
+    <ClCompile Include="video_manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="animation.h" />
@@ -213,6 +214,7 @@
     <ClInclude Include="texture_manager.h" />
     <ClInclude Include="timer.h" />
     <ClInclude Include="type.h" />
+    <ClInclude Include="video_manager.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="input_manager.inl" />

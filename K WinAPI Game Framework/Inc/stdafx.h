@@ -24,6 +24,10 @@
 #include <sstream>
 #include <string>
 
+// DirectX
+#include <wrl/client.h>
+#include <dshow.h>
+
 // DirectXTK
 #include <Audio.h>
 

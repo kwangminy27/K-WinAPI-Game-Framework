@@ -5,6 +5,7 @@
 #endif
 
 #pragma comment(lib, "msimg32.lib")
+#pragma comment(lib, "Strmiids.lib")
 
 // Windows API
 #define NOMINMAX

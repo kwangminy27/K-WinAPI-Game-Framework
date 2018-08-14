@@ -2,18 +2,14 @@
 
 #include "scene_component.h"
 
-class LogoScene : public SceneComponent
+class MainScene final : public SceneComponent
 {
 	friend class Scene;
 private:
-	LogoScene() = default;
-	LogoScene(LogoScene const& _other);
-	LogoScene(LogoScene&& _other) noexcept;
-	LogoScene& operator=(LogoScene const&) = default;
-	LogoScene& operator=(LogoScene&&) noexcept = default;
+	MainScene() = default;
 
 	virtual void _Release() override;
-
+	
 	virtual bool _Initialize() override;
 	virtual void _Input(float _time) override;
 	virtual void _Update(float _time) override;

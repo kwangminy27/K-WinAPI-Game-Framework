@@ -2,16 +2,17 @@
 #include "scene_manager.h"
 
 #include "scene.h"
-#include "logo_scene.h"
+#include "main_scene.h"
 #include "object_manager.h"
 
 using namespace std;
 
 bool SceneManager::Initialize()
 {
-	if (!(scene_ = _CreateScene("Hello, world!")))
+	if (!(scene_ = _CreateScene("Main")))
 		return false;
-	if (!(scene_->scene_component_ = scene_->_CreateSceneComponent<LogoScene>("Hello, world!")))
+
+	if (!(scene_->scene_component_ = scene_->_CreateSceneComponent<MainScene>("Main")))
 		return false;
 
 	return true;

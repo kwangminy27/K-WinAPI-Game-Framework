@@ -141,9 +141,6 @@
     <ClCompile Include="animation.cpp">
       <Filter>09. Animation</Filter>
     </ClCompile>
-    <ClCompile Include="logo_scene.cpp">
-      <Filter>04. Scene\01. SceneComponent</Filter>
-    </ClCompile>
     <ClCompile Include="input_manager.cpp">
       <Filter>02. Input</Filter>
     </ClCompile>
@@ -159,6 +156,13 @@
     <ClCompile Include="video_manager.cpp">
       <Filter>11. Video</Filter>
     </ClCompile>
+    <ClCompile Include="main_scene.cpp">
+      <Filter>04. Scene\01. SceneComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="point_collider.cpp" />
+    <ClCompile Include="rect_collider.cpp" />
+    <ClCompile Include="circle_collider.cpp" />
+    <ClCompile Include="pixel_collider.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -230,9 +234,6 @@
     <ClInclude Include="animation.h">
       <Filter>09. Animation</Filter>
     </ClInclude>
-    <ClInclude Include="logo_scene.h">
-      <Filter>04. Scene\01. SceneComponent</Filter>
-    </ClInclude>
     <ClInclude Include="input_manager.h">
       <Filter>02. Input</Filter>
     </ClInclude>
@@ -248,6 +249,13 @@
     <ClInclude Include="video_manager.h">
       <Filter>11. Video</Filter>
     </ClInclude>
+    <ClInclude Include="main_scene.h">
+      <Filter>04. Scene\01. SceneComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="point_collider.h" />
+    <ClInclude Include="rect_collider.h" />
+    <ClInclude Include="circle_collider.h" />
+    <ClInclude Include="pixel_collider.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="singleton.inl">
